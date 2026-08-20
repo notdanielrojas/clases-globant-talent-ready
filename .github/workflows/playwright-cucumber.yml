@@ -12,18 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Bruno API Tests
-        uses: usebruno/bruno-cli-action@v1
+      - uses: actions/setup-node@v4
         with:
-          working-directory: bruno
-          command: 'run --env Booker --reporter-json bruno-report.json'
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Bruno API Tests
+        run: npm run test:bruno
 
       - name: Upload Bruno Report
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: bruno-report
-          path: bruno/bruno-report.json
+          path: reports/bruno-report.json
 
   cucumber-tests:
     runs-on: ubuntu-latest
