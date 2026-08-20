@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
-    "test:bruno": "cd bruno && npx bru run --env Booker ../reports/bruno-report.json"
+    "test:bruno": "cd bruno && npx bru run --env Booker --output ../reports/bruno-report.json"
   },
   "keywords": [],
   "author": "",
