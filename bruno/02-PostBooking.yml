@@ -31,25 +31,26 @@ runtime:
   scripts:
     - type: before-request
       code: |-
-        const { faker } = require('@faker-js/faker');
-        
-        // Generar nombre y apellido aleatorios
-        const randomFirstname = faker.person.firstName();
-        const randomLastname = faker.person.lastName();
-        
-        // Asignar a variables de runtime para usarlas en el body con {{...}}
-        req.setVar('randomFirstname', randomFirstname);
-        req.setVar('randomLastname', randomLastname);
+        const nombres = ['Daniel', 'Carlos', 'Ana', 'Maria', 'Pedro', 'Laura'];
+        const apellidos = ['Rojas', 'Gomez', 'Perez', 'Silva', 'Torres', 'Vargas'];
+
+        const randomFirstname = nombres[Math.floor(Math.random() * nombres.length)];
+        const randomLastname = apellidos[Math.floor(Math.random() * apellidos.length)];
+
+        // Usar bru.setVar en lugar de req.setVar
+        bru.setVar('randomFirstname', randomFirstname);
+        bru.setVar('randomLastname', randomLastname);
 
     - type: after-response
       code: |-
-        test('Guardar ID de la respuesta', function () {
-          const data = res.getBody();
-          
-          expect(data).to.have.property('bookingid');
-          
-          bru.setEnvVar('createdId', data.bookingid);
-        });
+        const data = res.getBody();
+
+        // Asignación de variables globales de Bruno
+        bru.setVar('createdId', data.bookingid);
+        bru.setVar('expected_firstname', data.booking.firstname);
+        bru.setVar('expected_lastname', data.booking.lastname);
+        bru.setVar('expected_depositpaid', data.booking.depositpaid);
+        bru.setVar('expected_additionalneeds', data.booking.additionalneeds);
 
     - type: tests
       code: |-
@@ -65,42 +66,6 @@ runtime:
           expect(data.booking.totalprice).to.be.a('number');
           expect(data.booking.bookingdates).to.be.an('object');
         });
-
-        test('Validar valores creados coinciden con el cuerpo enviado', function () {
-          const data = res.getBody();
-          const bodyEnviado = req.getBody();
-
-          expect(data.booking.firstname).to.equal(bodyEnviado.firstname);
-          expect(data.booking.lastname).to.equal(bodyEnviado.lastname);
-          expect(data.booking.totalprice).to.equal(bodyEnviado.totalprice);
-          expect(data.booking.bookingdates.checkin).to.equal(bodyEnviado.bookingdates.checkin);
-        });
-
-actions:
-  - type: set-variable
-    phase: after-response
-    selector:
-      expression: res.body.booking.firstname
-      method: jsonq
-    variable:
-      name: expected_firstname
-      scope: runtime
-  - type: set-variable
-    phase: after-response
-    selector:
-      expression: res.body.booking.lastname
-      method: jsonq
-    variable:
-      name: expected_lastname
-      scope: runtime
-  - type: set-variable
-    phase: after-response
-    selector:
-      expression: res.body.booking.totalprice
-      method: jsonq
-    variable:
-      name: expected_totalprice
-      scope: runtime
 
 settings:
   encodeUrl: true

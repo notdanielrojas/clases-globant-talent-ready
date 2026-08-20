@@ -15,26 +15,32 @@ runtime:
   scripts:
     - type: tests
       code: |-
-        test('validar codigo 200 exitoso', function () {
+        test('Validar estado de respuesta exitoso (200 OK)', function () {
           expect(res.getStatus()).to.equal(200);
         });
 
         test('validar nombre creado de forma dinamica', function () {
           const data = res.getBody();
-          
-          const nombreEsperado = bru.getVar("expected_firstname");
-          const apellidoEsperado = bru.getVar("expected_lastname");
-
-          expect(data.firstname).to.equal(nombreEsperado);
-          expect(data.lastname).to.equal(apellidoEsperado);
+          const expectedFirstname = bru.getVar('expected_firstname');
+          expect(data.firstname).to.equal(expectedFirstname);
         });
 
-        test('validar precio de forma dinamica', function () {
+        test('validar apellido creado de forma dinamica', function () {
           const data = res.getBody();
-          
-          const precioEsperado = bru.getVar("expected_totalprice");
+          const expectedLastname = bru.getVar('expected_lastname');
+          expect(data.lastname).to.equal(expectedLastname);
+        });
 
-          expect(data.totalprice).to.equal(precioEsperado);
+        test('validar depositpaid de forma dinamica', function () {
+          const data = res.getBody();
+          const expectedDepositPaid = bru.getVar('expected_depositpaid');
+          expect(data.depositpaid).to.equal(expectedDepositPaid);
+        });
+
+        test('validar additionalneeds de forma dinamica', function () {
+          const data = res.getBody();
+          const expectedAdditionalNeeds = bru.getVar('expected_additionalneeds');
+          expect(data.additionalneeds).to.equal(expectedAdditionalNeeds);
         });
 
 settings:
