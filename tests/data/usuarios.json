@@ -1,0 +1,43 @@
+[
+  {
+    "nombre": "Login válido",
+    "usuario": "standard_user",
+    "password": "secret_sauce",
+    "loginExitoso": true
+  },
+  {
+    "nombre": "Contraseña incorrecta",
+    "usuario": "standard_user",
+    "password": "incorrecta",
+    "loginExitoso": false,
+    "mensaje": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "nombre": "Usuario bloqueado",
+    "usuario": "locked_out_user",
+    "password": "secret_sauce",
+    "loginExitoso": false,
+    "mensaje": "Epic sadface: Sorry, this user has been locked out."
+  },
+  {
+    "nombre": "Usuario vacío",
+    "usuario": "",
+    "password": "secret_sauce",
+    "loginExitoso": false,
+    "mensaje": "Epic sadface: Username is required"
+  },
+  {
+    "nombre": "Contraseña vacía",
+    "usuario": "standard_user",
+    "password": "",
+    "loginExitoso": false,
+    "mensaje": "Epic sadface: Password is required"
+  },
+  {
+    "nombre": "Campos vacíos",
+    "usuario": "",
+    "password": "",
+    "loginExitoso": false,
+    "mensaje": "Epic sadface: Username is required"
+  }
+]

@@ -1,0 +1,487 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Login with valid credentials",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 312462599
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 142840599
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 57951500
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "the user enters username \"standard_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 61239398
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 6020798
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user is redirected to the products page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:41"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 182330600
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Login with invalid credentials",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 232405800
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 454729099
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 43553099
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the user enters username \"invalid_user\" and password \"wrong_password\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 26872499
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3499600
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the user should see the error message \"Epic sadface: Username and password do not match any user in this service\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:45"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 174060099
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;login-with-empty-fields",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Login with empty fields",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 240484100
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 145494899
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 43505299
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "the user leaves username and password fields empty",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:16"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27637198
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2612698
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the user should see the error message \"Epic sadface: Username is required\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:45"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 171260400
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;login-with-empty-username-only",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Login with empty username only",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 238224099
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 101478499
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 76881400
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "the user leaves username field empty and enters password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:21"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 43543099
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2737599
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "the user should see the error message \"Epic sadface: Username is required\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:45"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 172476599
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;login-with-empty-password-only",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "Login with empty password only",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 233154599
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 630854599
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 46085198
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "the user enters username \"standard_user\" and leaves password field empty",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:29"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 35587298
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2883300
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "the user should see the error message \"Epic sadface: Password is required\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:45"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 172007899
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;login-with-locked-out-user",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Login with locked out user",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 260681300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 108269499
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 78838400
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "the user enters username \"locked_out_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 43666699
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4169999
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "the user should see the error message \"Epic sadface: Sorry, this user has been locked out.\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:45"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 244298399
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "saucedemo-login-authentication",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Saucedemo Login Authentication",
+    "tags": [],
+    "uri": "tests\\features\\login\\login.feature"
+  }
+]
