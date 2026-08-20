@@ -8,7 +8,7 @@ import {
 
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync } from 'fs';
-import { LoginPage } from '../../pages/loginPage';
+import { LoginPage } from '../../pages/LoginPage';
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 
