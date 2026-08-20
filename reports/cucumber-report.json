@@ -1,5 +1,806 @@
 [
   {
+    "description": "  As a registered user of the platform\n  I want to enter my credentials on the login page\n  To access the application product catalog",
+    "elements": [
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 18,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 259380899
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 834445698
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 45982599
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"standard_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 49035399
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5902299
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"success\" with the message \"N/A\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 183997499
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 19,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 246764999
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 499502400
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 44361499
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"locked_out_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 29866499
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2986498
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"error\" with the message \"Epic sadface: Sorry, this user has been locked out.\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 176736400
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 20,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 241181900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 95290499
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 79758400
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"problem_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 56174699
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2377098
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"success\" with the message \"N/A\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 233684500
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 21,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 224714599
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 145015699
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 43420998
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"performance_glitch_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 5069575999
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2708399
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"success\" with the message \"N/A\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 171315999
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 22,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 219384000
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 112099099
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 44075299
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"error_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 80777900
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2255398
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"success\" with the message \"N/A\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 212123100
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 23,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 219375699
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 96554100
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 65369798
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"visual_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 55329099
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3888298
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"success\" with the message \"N/A\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 224257999
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 24,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 218332999
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 91140100
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 78637998
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"invalid_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 36644600
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2879199
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"error\" with the message \"Epic sadface: Username and password do not match any user in this service\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 239078700
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 25,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 235857099
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 94416699
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 75878499
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"\" and password \"\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 46286799
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2688900
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"error\" with the message \"Epic sadface: Username is required\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 158950699
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 26,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 217629699
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1615761599
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 45713298
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"standard_user\" and password \"\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 23572500
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2777198
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"error\" with the message \"Epic sadface: Password is required\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 161393599
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "saucedemo-login-authentication;verify-login-behavior-with-various-user-profiles",
+        "keyword": "Scenario Outline",
+        "line": 27,
+        "name": "Verify login behavior with various user profiles",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 254645900
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 102081000
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is on the Saucedemo login page",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:4"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 89385498
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters username \"\" and password \"secret_sauce\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 41306999
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "clicks the login button",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2733799
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user should see the expected outcome \"error\" with the message \"Epic sadface: Username is required\"",
+            "match": {
+              "location": "tests\\features\\step_definitions\\login.steps.js:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 168351900
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "saucedemo-login-authentication",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Saucedemo Login Authentication",
+    "tags": [],
+    "uri": "tests\\features\\login\\login-table.feature"
+  },
+  {
     "description": "",
     "elements": [
       {
@@ -12,7 +813,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 283163300
+              "duration": 246442100
             },
             "keyword": "Before",
             "hidden": true
@@ -20,7 +821,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 106529099
+              "duration": 97027999
             },
             "arguments": [],
             "keyword": "Given ",
@@ -33,7 +834,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 86036100
+              "duration": 75918198
             },
             "arguments": [],
             "keyword": "When ",
@@ -46,7 +847,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 54795400
+              "duration": 60100699
             },
             "arguments": [],
             "keyword": "And ",
@@ -59,7 +860,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 7800699
+              "duration": 2416998
             },
             "arguments": [],
             "keyword": "Then ",
@@ -72,7 +873,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 224184099
+              "duration": 229349699
             },
             "keyword": "After",
             "hidden": true
@@ -91,7 +892,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 246968399
+              "duration": 255258700
             },
             "keyword": "Before",
             "hidden": true
@@ -99,7 +900,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 109051499
+              "duration": 96530700
             },
             "arguments": [],
             "keyword": "Given ",
@@ -112,7 +913,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 45268400
+              "duration": 79371700
             },
             "arguments": [],
             "keyword": "When ",
@@ -125,7 +926,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 51914498
+              "duration": 32816299
             },
             "arguments": [],
             "keyword": "And ",
@@ -138,7 +939,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 3558899
+              "duration": 3329798
             },
             "arguments": [],
             "keyword": "Then ",
@@ -151,7 +952,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 243615399
+              "duration": 238814199
             },
             "keyword": "After",
             "hidden": true
@@ -170,7 +971,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 232160599
+              "duration": 516037700
             },
             "keyword": "Before",
             "hidden": true
@@ -178,7 +979,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 101428699
+              "duration": 672026998
             },
             "arguments": [],
             "keyword": "Given ",
@@ -191,7 +992,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 65236700
+              "duration": 43262899
             },
             "arguments": [],
             "keyword": "When ",
@@ -204,7 +1005,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 33702698
+              "duration": 34751199
             },
             "arguments": [],
             "keyword": "And ",
@@ -217,7 +1018,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 2203100
+              "duration": 3113200
             },
             "arguments": [],
             "keyword": "Then ",
@@ -230,7 +1031,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 161548400
+              "duration": 186053199
             },
             "keyword": "After",
             "hidden": true
@@ -249,7 +1050,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 237696500
+              "duration": 233677599
             },
             "keyword": "Before",
             "hidden": true
@@ -257,7 +1058,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 98092200
+              "duration": 95280598
             },
             "arguments": [],
             "keyword": "Given ",
@@ -270,7 +1071,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 68093599
+              "duration": 69384799
             },
             "arguments": [],
             "keyword": "When ",
@@ -283,7 +1084,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 39985899
+              "duration": 34344299
             },
             "arguments": [],
             "keyword": "And ",
@@ -296,7 +1097,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 2965799
+              "duration": 2166500
             },
             "arguments": [],
             "keyword": "Then ",
@@ -309,7 +1110,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 166125400
+              "duration": 167519100
             },
             "keyword": "After",
             "hidden": true
@@ -328,7 +1129,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 232764799
+              "duration": 224986600
             },
             "keyword": "Before",
             "hidden": true
@@ -336,7 +1137,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 99088398
+              "duration": 97622300
             },
             "arguments": [],
             "keyword": "Given ",
@@ -349,7 +1150,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 62648300
+              "duration": 74781298
             },
             "arguments": [],
             "keyword": "When ",
@@ -362,7 +1163,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 41548898
+              "duration": 40870599
             },
             "arguments": [],
             "keyword": "And ",
@@ -375,7 +1176,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 2480599
+              "duration": 2220199
             },
             "arguments": [],
             "keyword": "Then ",
@@ -388,7 +1189,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 163762799
+              "duration": 168267700
             },
             "keyword": "After",
             "hidden": true
@@ -407,7 +1208,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 236422899
+              "duration": 235001000
             },
             "keyword": "Before",
             "hidden": true
@@ -415,7 +1216,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 96802799
+              "duration": 91578400
             },
             "arguments": [],
             "keyword": "Given ",
@@ -428,7 +1229,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 67151298
+              "duration": 67736499
             },
             "arguments": [],
             "keyword": "When ",
@@ -441,7 +1242,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 33374799
+              "duration": 38152700
             },
             "arguments": [],
             "keyword": "And ",
@@ -454,7 +1255,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 3166099
+              "duration": 2093599
             },
             "arguments": [],
             "keyword": "Then ",
@@ -467,7 +1268,7 @@
           {
             "result": {
               "status": "passed",
-              "duration": 250128899
+              "duration": 231722600
             },
             "keyword": "After",
             "hidden": true

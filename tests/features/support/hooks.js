@@ -8,7 +8,7 @@ import {
 
 import { chromium } from '@playwright/test';
 import { existsSync, mkdirSync } from 'fs';
-import { LoginPage } from '../../pages/loginPage.js';
+import LoginPage from '../../pages/loginPage.js';
 
 setDefaultTimeout(60 * 1000);
 
