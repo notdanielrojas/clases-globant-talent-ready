@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js tests/features/**/*.feature --import tests/step_definitions/**/*.steps.js --import tests/support/**/*.js"
+    "test": "cucumber-js"
   },
   "keywords": [],
   "author": "",
