@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js tests/features/**/*.feature --import tests/step_definitions/**/*.steps.js --import tests/support/**/*.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
