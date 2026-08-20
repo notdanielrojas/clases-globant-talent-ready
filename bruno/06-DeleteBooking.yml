@@ -1,0 +1,26 @@
+info:
+  name: 06-DeleteBooking
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{basicUrl}}/booking/{{createdId}}"
+  headers:
+    - name: Cookie
+      value: token={{AuthToken}}
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test ('validar codigo 201 exitoso', function () {
+              expect(res.getStatus()).to.equal(201);
+              });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

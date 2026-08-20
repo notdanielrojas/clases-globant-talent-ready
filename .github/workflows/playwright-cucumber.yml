@@ -1,4 +1,4 @@
-name: Test Suite Execution
+name: Automated Test Suite
 
 on:
   push:
@@ -7,6 +7,24 @@ on:
     branches: [ main, master ]
 
 jobs:
+  bruno-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Bruno API Tests
+        uses: usebruno/bruno-cli-action@v1
+        with:
+          working-directory: bruno
+          command: 'run --env Booker --reporter-json bruno-report.json'
+
+      - name: Upload Bruno Report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: bruno-report
+          path: bruno/bruno-report.json
+
   cucumber-tests:
     runs-on: ubuntu-latest
     steps:

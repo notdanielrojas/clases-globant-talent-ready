@@ -1,0 +1,109 @@
+info:
+  name: 02-PostBooking
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{basicUrl}}/booking"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "firstname" : "{{randomFirstname}}",
+          "lastname" : "{{randomLastname}}",
+          "totalprice" : 182,
+          "depositpaid" : true,
+          "bookingdates" : {
+              "checkin" : "2026-01-01",
+              "checkout" : "2027-01-01"
+          },
+          "additionalneeds" : "Breakfast"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        const { faker } = require('@faker-js/faker');
+        
+        // Generar nombre y apellido aleatorios
+        const randomFirstname = faker.person.firstName();
+        const randomLastname = faker.person.lastName();
+        
+        // Asignar a variables de runtime para usarlas en el body con {{...}}
+        req.setVar('randomFirstname', randomFirstname);
+        req.setVar('randomLastname', randomLastname);
+
+    - type: after-response
+      code: |-
+        test('Guardar ID de la respuesta', function () {
+          const data = res.getBody();
+          
+          expect(data).to.have.property('bookingid');
+          
+          bru.setEnvVar('createdId', data.bookingid);
+        });
+
+    - type: tests
+      code: |-
+        test('Validar creación exitosa (Status 200)', function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test('Validar estructura del nuevo registro', function () {
+          const data = res.getBody();
+          
+          expect(data.bookingid).to.be.a('number');
+          expect(data.booking.firstname).to.be.a('string');
+          expect(data.booking.totalprice).to.be.a('number');
+          expect(data.booking.bookingdates).to.be.an('object');
+        });
+
+        test('Validar valores creados coinciden con el cuerpo enviado', function () {
+          const data = res.getBody();
+          const bodyEnviado = req.getBody();
+
+          expect(data.booking.firstname).to.equal(bodyEnviado.firstname);
+          expect(data.booking.lastname).to.equal(bodyEnviado.lastname);
+          expect(data.booking.totalprice).to.equal(bodyEnviado.totalprice);
+          expect(data.booking.bookingdates.checkin).to.equal(bodyEnviado.bookingdates.checkin);
+        });
+
+actions:
+  - type: set-variable
+    phase: after-response
+    selector:
+      expression: res.body.booking.firstname
+      method: jsonq
+    variable:
+      name: expected_firstname
+      scope: runtime
+  - type: set-variable
+    phase: after-response
+    selector:
+      expression: res.body.booking.lastname
+      method: jsonq
+    variable:
+      name: expected_lastname
+      scope: runtime
+  - type: set-variable
+    phase: after-response
+    selector:
+      expression: res.body.booking.totalprice
+      method: jsonq
+    variable:
+      name: expected_totalprice
+      scope: runtime
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

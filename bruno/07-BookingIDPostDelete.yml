@@ -1,0 +1,27 @@
+info:
+  name: 07-BookingIDPostDelete
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{basicUrl}}/booking/{{createdId}}"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test('Validar que la reserva ya no exista (Status 404)', function () {
+          expect(res.getStatus()).to.equal(404);
+        });
+
+        test('Validar mensaje de error por recurso eliminado', function () {
+          expect(res.getBody()).to.equal('Not Found');
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: 05-BookingIDPostUpdate
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{basicUrl}}/booking/{{createdId}}"
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test('Validar actualización exitosa (Status 200)', function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,8 @@
+name: Booker
+variables:
+  - name: basicUrl
+    value: https://restful-booker.herokuapp.com
+  - name: createdId
+    value:
+      type: number
+      data: "1701"

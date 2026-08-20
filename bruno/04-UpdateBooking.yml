@@ -1,0 +1,61 @@
+info:
+  name: 04-UpdateBooking
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{basicUrl}}/booking/{{createdId}}"
+  headers:
+    - name: Cookie
+      value: token={{AuthToken}}
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "firstname": "Danielle",
+        "lastname": "Rojas",
+        "totalprice": 99999,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2018-01-01",
+          "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+      }
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test('Validar actualización exitosa (Status 200)', function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test('Validar estructura de datos modificada', function () {
+          const data = res.getBody();
+          
+          expect(data.firstname).to.be.a('string');
+          expect(data.totalprice).to.be.a('number');
+          expect(data.bookingdates).to.be.an('object');
+        });
+
+        test('Validar valores actualizados en el cuerpo', function () {
+          const data = res.getBody();
+          const bodyEnviado = req.getBody();
+
+          expect(data.firstname).to.equal(bodyEnviado.firstname);
+          expect(data.totalprice).to.equal(bodyEnviado.totalprice);
+          expect(data.additionalneeds).to.equal(bodyEnviado.additionalneeds);
+          expect(data.bookingdates.checkin).to.equal(bodyEnviado.bookingdates.checkin);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

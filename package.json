@@ -14,13 +14,15 @@
     "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
+    "@usebruno/cli": "^4.0.0",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.10.2",
-    "cucumber-html-reporter": "^7.2.0",
+    "cucumber-html-reporter": "^5.0.2",
     "multiple-cucumber-html-reporter": "^4.2.0"
   },
   "directories": {
-    "test": "tests"
+    "test": "tests",
+    "test:bruno": "bru run bruno --reporter-html reports/bruno-report.html"
   },
   "dependencies": {
     "allure-js-commons": "^3.10.2",
