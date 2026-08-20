@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import usuarios from "./data/usuarios.json";
+import usuarios from "./data/usuarios.json" with { type: 'json' };;
 
 const BASE_URL = "https://www.saucedemo.com/";
 
